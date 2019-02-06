@@ -75,7 +75,7 @@ class Kernel extends ConsoleKernel
         $schedule
             ->command('backup:monitor')
             ->daily();
-        
+
         $schedule
             ->command('telescope:prune')
             ->daily();

@@ -2,11 +2,9 @@
 
 namespace App\Console\Commands\Polling;
 
-use App\Models\Voter;
-use App\Jobs\PollVoters as Job;
 use App\Models\Delegate;
 use App\Services\Ark\Client;
-use App\Events\VoteWasShifted;
+use App\Jobs\PollVoters as Job;
 use Illuminate\Console\Command;
 
 class PollVoters extends Command
