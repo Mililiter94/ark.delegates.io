@@ -3,7 +3,9 @@
 namespace App\Jobs;
 
 use App\Models\Delegate;
+use App\Services\Ark\Client;
 use Illuminate\Bus\Queueable;
+use App\Events\VoteWasShifted;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,7 +35,7 @@ class PollVoters implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(Client $client)
     {
         // Current vote data...
         $votesBefore = $this->delegate->voters()->sum('balance');
