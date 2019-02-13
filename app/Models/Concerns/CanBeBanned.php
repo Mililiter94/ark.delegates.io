@@ -19,7 +19,7 @@ trait CanBeBanned
 
     public function getIsBannedAttribute(): bool
     {
-        return ! empty($this->banned_at);
+        return !empty($this->banned_at);
     }
 
     public function scopeBanned(Builder $query): Builder

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 use App\Models\Concerns\HasSiblings;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Announcement extends Model
 {

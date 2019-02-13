@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\Delegate\UpdateDelegate;
 use App\Models\Country;
 use App\Models\Delegate;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\Dashboard\Delegate\UpdateDelegate;
 
 class DelegateController extends Controller
 {

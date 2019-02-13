@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front\Delegate;
 
-use App\Models\Delegate;
 use App\Models\Contribution;
+use App\Models\Delegate;
 use Illuminate\Routing\Controller;
 
 class ContributionController extends Controller

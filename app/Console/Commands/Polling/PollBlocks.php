@@ -2,9 +2,8 @@
 
 namespace App\Console\Commands\Polling;
 
-use App\Models\Delegate;
-use App\Services\Ark\Client;
 use App\Events\BlockWasMissed;
+use App\Models\Delegate;
 use App\Services\Ark\Database;
 use Illuminate\Console\Command;
 

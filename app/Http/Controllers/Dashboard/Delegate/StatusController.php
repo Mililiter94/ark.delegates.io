@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Status;
-use App\Models\Delegate;
 use App\Events\StatusWasCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Delegate\StoreStatus;
 use App\Http\Requests\Dashboard\Delegate\UpdateStatus;
+use App\Models\Delegate;
+use App\Models\Status;
 
 class StatusController extends Controller
 {

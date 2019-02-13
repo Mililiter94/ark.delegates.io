@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Account\Settings\Security;
 
-use Ramsey\Uuid\Uuid;
 use App\Facades\Authy;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Account\Settings\Security\EnableTwoFactorAuthRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
+use Ramsey\Uuid\Uuid;
 
 class TwoFactorAuthController extends Controller
 {

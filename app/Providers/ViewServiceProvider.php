@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer;
+use App\Http\ViewComposers\Shared\GlobalViewComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use App\Http\ViewComposers\Shared\GlobalViewComposer;
-use App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer;
 
 class ViewServiceProvider extends ServiceProvider
 {

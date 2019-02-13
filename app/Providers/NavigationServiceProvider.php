@@ -2,17 +2,17 @@
 
 namespace App\Providers;
 
+use App\Services\Navigation\Menus\Auth;
+use App\Services\Navigation\Menus\Dashboard;
+use App\Services\Navigation\Menus\Main;
+use App\Services\Navigation\Menus\Tools;
+use App\Services\Navigation\Menus\User;
+use App\Services\Navigation\Tabs\Notifications;
+use App\Services\Navigation\Tabs\Settings;
+use Illuminate\Support\ServiceProvider;
 use Spatie\Menu\Laravel\Html;
 use Spatie\Menu\Laravel\Link;
 use Spatie\Menu\Laravel\Menu;
-use App\Services\Navigation\Menus\Auth;
-use App\Services\Navigation\Menus\Main;
-use App\Services\Navigation\Menus\User;
-use Illuminate\Support\ServiceProvider;
-use App\Services\Navigation\Menus\Tools;
-use App\Services\Navigation\Tabs\Settings;
-use App\Services\Navigation\Menus\Dashboard;
-use App\Services\Navigation\Tabs\Notifications;
 
 class NavigationServiceProvider extends ServiceProvider
 {

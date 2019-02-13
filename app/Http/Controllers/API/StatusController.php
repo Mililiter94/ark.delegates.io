@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Status;
 use App\Http\Controllers\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Status as StatusResource;
+use App\Models\Status;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class StatusController extends Controller
 {

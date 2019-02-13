@@ -19,7 +19,7 @@ trait CanBeVerified
 
     public function getIsVerifiedAttribute(): bool
     {
-        return ! empty($this->verified_at);
+        return !empty($this->verified_at);
     }
 
     public function scopeVerified(Builder $query): Builder

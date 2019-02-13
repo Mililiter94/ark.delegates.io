@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Server;
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Delegate\StoreServer;
 use App\Http\Requests\Dashboard\Delegate\UpdateServer;
+use App\Models\Delegate;
+use App\Models\Server;
 
 class ServerController extends Controller
 {

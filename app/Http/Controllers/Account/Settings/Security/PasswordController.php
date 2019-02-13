@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Account\Settings\Security;
 
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Account\Settings\Security\ChangePassword;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class PasswordController extends Controller
 {
@@ -29,7 +29,7 @@ class PasswordController extends Controller
      */
     public function update(ChangePassword $request): RedirectResponse
     {
-        if (! Hash::check($request->current_password, $request->user()->password)) {
+        if (!Hash::check($request->current_password, $request->user()->password)) {
             return response()->json([
                 'errors' => [
                     'current_password' => ['The given password does not match our records.'],

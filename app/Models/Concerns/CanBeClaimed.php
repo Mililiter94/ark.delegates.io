@@ -2,9 +2,9 @@
 
 namespace App\Models\Concerns;
 
-use Illuminate\Support\Carbon;
 use App\Notifications\DelegateVerified;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Carbon;
 
 trait CanBeClaimed
 {
@@ -97,7 +97,7 @@ trait CanBeClaimed
      */
     public function claimHasExpired(): bool
     {
-        if (! $this->claimed_at && ! $this->verified_at) {
+        if (!$this->claimed_at && !$this->verified_at) {
             return true;
         }
 

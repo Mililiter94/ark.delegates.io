@@ -11,8 +11,6 @@ class SendMissedBlockNotification
      * Handle the event.
      *
      * @param BlockWasMissed $event
-     *
-     * @return void
      */
     public function handle(BlockWasMissed $event)
     {

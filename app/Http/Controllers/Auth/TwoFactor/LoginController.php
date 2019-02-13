@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth\TwoFactor;
 
-use App\Models\User;
 use App\Facades\Authy;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -53,7 +53,7 @@ class LoginController extends Controller
             'token' => ['required', 'integer'],
         ]);
 
-        if (! $request->session()->has('ark:auth:id')) {
+        if (!$request->session()->has('ark:auth:id')) {
             return redirect()->route('login');
         }
 

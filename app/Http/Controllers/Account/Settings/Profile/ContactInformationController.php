@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Account\Settings\Profile;
 
-use Illuminate\View\View;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\Account\Settings\Profile\ChangeContactInformation;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class ContactInformationController extends Controller
 {

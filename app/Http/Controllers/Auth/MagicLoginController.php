@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use App\Notifications\MagicLink;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class MagicLoginController extends LoginController
 {
@@ -54,7 +54,7 @@ class MagicLoginController extends LoginController
      */
     public function login(Request $request)
     {
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignature()) {
             alert()->error('The magic link seems to have expired, please try requesting a new one and try again.');
 
             return redirect()->route('login');

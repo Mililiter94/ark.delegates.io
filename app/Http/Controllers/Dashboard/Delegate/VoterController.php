@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Voter;
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
+use App\Models\Delegate;
+use App\Models\Voter;
 
 class VoterController extends Controller
 {

@@ -11,8 +11,6 @@ class SendVoteShiftNotification
      * Handle the event.
      *
      * @param VoteWasShifted $event
-     *
-     * @return void
      */
     public function handle(VoteWasShifted $event)
     {

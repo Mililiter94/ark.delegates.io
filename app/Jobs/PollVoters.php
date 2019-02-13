@@ -2,15 +2,14 @@
 
 namespace App\Jobs;
 
-use App\Models\Delegate;
-use App\Services\Ark\Client;
-use Illuminate\Bus\Queueable;
 use App\Events\VoteWasShifted;
+use App\Models\Delegate;
 use App\Services\Ark\Database;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class PollVoters implements ShouldQueue
 {

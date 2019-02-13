@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Auth\TwoFactor;
 
-use App\Models\User;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
+use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Foundation\Auth\RedirectsUsers;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
 
 class EmergencyLoginController extends Controller
 {
@@ -53,13 +53,13 @@ class EmergencyLoginController extends Controller
     {
         $this->validate($request, ['token' => 'required']);
 
-        if (! $request->session()->has('ark:auth:id')) {
+        if (!$request->session()->has('ark:auth:id')) {
             return redirect()->route('login');
         }
 
         $user = User::findOrFail($request->session()->pull('ark:auth:id'));
 
-        if (! Hash::check($request->token, $user->two_factor_reset_code)) {
+        if (!Hash::check($request->token, $user->two_factor_reset_code)) {
             alert()->error('The emergency token was invalid.');
 
             return redirect()->route('login');

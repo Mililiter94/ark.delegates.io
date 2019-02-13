@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
+use App\Models\Delegate;
 
 class HomeController extends Controller
 {

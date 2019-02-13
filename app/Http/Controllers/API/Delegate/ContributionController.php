@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Delegate;
 
-use App\Models\Delegate;
-use App\Models\Contribution;
 use App\Http\Controllers\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Contribution as ContributionResource;
+use App\Models\Contribution;
+use App\Models\Delegate;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ContributionController extends Controller
 {

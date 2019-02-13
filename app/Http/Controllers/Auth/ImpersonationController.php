@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ImpersonationController extends Controller
 {
@@ -50,7 +50,7 @@ class ImpersonationController extends Controller
     {
         $currentId = auth()->id();
 
-        if (! $request->session()->has('ark:impersonator')) {
+        if (!$request->session()->has('ark:impersonator')) {
             auth()->logout();
 
             return redirect('/');

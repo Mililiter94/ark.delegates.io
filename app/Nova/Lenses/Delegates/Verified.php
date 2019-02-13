@@ -2,12 +2,12 @@
 
 namespace App\Nova\Lenses\Delegates;
 
-use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Lenses\Lens;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\LensRequest;
+use Laravel\Nova\Lenses\Lens;
+use Spatie\TagsField\Tags;
 
 class Verified extends Lens
 {

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Delegate;
 
-use App\Models\Voter;
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Voter as VoterResource;
+use App\Models\Delegate;
+use App\Models\Voter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class VoterController extends Controller
 {

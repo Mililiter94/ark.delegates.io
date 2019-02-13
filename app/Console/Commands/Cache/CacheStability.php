@@ -40,7 +40,7 @@ class CacheStability extends Command
                 $delegate->votes -= $voter->balance;
 
                 $lostVotes += $voter->balance;
-                $lostVoters++;
+                ++$lostVoters;
 
                 // Dropped out...
                 if ($delegate->votes <= $lowestRank) {

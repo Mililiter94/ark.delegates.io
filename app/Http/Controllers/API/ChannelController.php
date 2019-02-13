@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Channel;
 use App\Http\Controllers\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Channel as ChannelResource;
+use App\Models\Channel;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ChannelController extends Controller
 {

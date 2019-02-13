@@ -9,7 +9,7 @@ trait HasSiblings
     /**
      * Get the preceding entity.
      *
-     * @return null|\Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Model|null
      */
     public function previous(): ?Model
     {
@@ -22,7 +22,7 @@ trait HasSiblings
     /**
      * Get the next entity.
      *
-     * @return null|\Illuminate\Database\Eloquent\Model
+     * @return \Illuminate\Database\Eloquent\Model|null
      */
     public function next(): ?Model
     {
@@ -39,7 +39,7 @@ trait HasSiblings
      */
     public function hasPrevious(): bool
     {
-        return ! empty($this->previous());
+        return !empty($this->previous());
     }
 
     /**
@@ -49,6 +49,6 @@ trait HasSiblings
      */
     public function hasNext(): bool
     {
-        return ! empty($this->next());
+        return !empty($this->next());
     }
 }

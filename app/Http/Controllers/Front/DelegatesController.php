@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SearchRequest;
+use App\Models\Delegate;
 
 class DelegatesController extends Controller
 {

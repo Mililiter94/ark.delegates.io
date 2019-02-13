@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Delegate;
 
-use App\Models\Server;
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
-use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\Server as ServerResource;
+use App\Models\Delegate;
+use App\Models\Server;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ServerController extends Controller
 {

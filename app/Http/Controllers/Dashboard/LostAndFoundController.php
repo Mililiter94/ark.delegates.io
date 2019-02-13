@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use Carbon\Carbon;
-use Ramsey\Uuid\Uuid;
-use App\Models\Delegate;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SearchRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Delegate;
 use ArkEcosystem\Crypto\Utils\Message;
+use Carbon\Carbon;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Ramsey\Uuid\Uuid;
 
 class LostAndFoundController extends Controller
 {
@@ -84,7 +84,7 @@ class LostAndFoundController extends Controller
         try {
             $message = Message::new($data['message']);
 
-            if (! $message->verify()) {
+            if (!$message->verify()) {
                 return $this->resetDelegate($delegate);
             }
 

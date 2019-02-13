@@ -2,20 +2,20 @@
 
 namespace App\Models;
 
-use Spatie\Tags\HasTags;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
-use App\Models\Concerns\OwnsModels;
 use App\Models\Concerns\CanBeCached;
 use App\Models\Concerns\CanBeClaimed;
-use Illuminate\Support\Facades\Cache;
 use App\Models\Concerns\CanBeVerified;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\Concerns\HasSchemalessAttributes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Concerns\OwnsModels;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Tags\HasTags;
 
 class Delegate extends Model
 {
@@ -200,7 +200,7 @@ class Delegate extends Model
             return str_replace('http://', 'https://', $logo);
         }
 
-        if (! Storage::disk('public')->exists($logo)) {
+        if (!Storage::disk('public')->exists($logo)) {
             $hash = md5($this->username);
 
             return "https://api.adorable.io/avatars/256/{$hash}.png";

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Channel;
-use App\Models\Delegate;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Delegate\StoreChannel;
 use App\Http\Requests\Dashboard\Delegate\UpdateChannel;
+use App\Models\Channel;
+use App\Models\Delegate;
 
 class ChannelController extends Controller
 {

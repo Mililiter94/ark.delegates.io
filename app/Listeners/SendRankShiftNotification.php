@@ -11,8 +11,6 @@ class SendRankShiftNotification
      * Handle the event.
      *
      * @param RankWasShifted $event
-     *
-     * @return void
      */
     public function handle(RankWasShifted $event)
     {

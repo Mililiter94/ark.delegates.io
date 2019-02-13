@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Delegate;
-use App\Models\TeamMember;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Delegate\StoreTeamMember;
 use App\Http\Requests\Dashboard\Delegate\UpdateTeamMember;
+use App\Models\Delegate;
+use App\Models\TeamMember;
 
 class TeamMemberController extends Controller
 {

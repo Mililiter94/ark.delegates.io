@@ -2,10 +2,9 @@
 
 namespace App\Console\Commands\Polling;
 
-use App\Models\User;
-use App\Models\Delegate;
-use App\Services\Ark\Client;
 use App\Events\RankWasShifted;
+use App\Models\Delegate;
+use App\Models\User;
 use App\Services\Ark\Database;
 use Illuminate\Console\Command;
 
@@ -27,7 +26,7 @@ class PollDelegates extends Command
     {
         $delegates = $database->delegates();
 
-        for ($i = 0; $i < count($delegates); $i++) {
+        for ($i = 0; $i < \count($delegates); ++$i) {
             $delegate = $delegates[$i];
 
             $this->line('Polling Delegate: <info>'.$delegate['username'].'</info>');

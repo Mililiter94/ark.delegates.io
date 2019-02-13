@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Dashboard\Delegate;
 
-use App\Models\Delegate;
-use App\Models\Contribution;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Delegate\StoreContribution;
 use App\Http\Requests\Dashboard\Delegate\UpdateContribution;
+use App\Models\Contribution;
+use App\Models\Delegate;
 
 class ContributionController extends Controller
 {

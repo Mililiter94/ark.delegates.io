@@ -4,13 +4,13 @@ namespace App\Providers;
 
 use App\Events\BlockWasMissed;
 use App\Events\RankWasShifted;
-use App\Events\VoteWasShifted;
 use App\Events\StatusWasCreated;
-use Illuminate\Auth\Events\Registered;
+use App\Events\VoteWasShifted;
+use App\Listeners\SendMissedBlockNotification;
 use App\Listeners\SendNewStatusNotification;
 use App\Listeners\SendRankShiftNotification;
 use App\Listeners\SendVoteShiftNotification;
-use App\Listeners\SendMissedBlockNotification;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use Illuminate\View\View;
+use App\Http\Controllers\Controller;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class AnnouncementController extends Controller
 {

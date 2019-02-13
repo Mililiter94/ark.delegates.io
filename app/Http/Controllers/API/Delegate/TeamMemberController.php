@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API\Delegate;
 
+use App\Http\Controllers\Controller;
+use App\Http\Resources\TeamMember as TeamMemberResource;
 use App\Models\Delegate;
 use App\Models\TeamMember;
-use App\Http\Controllers\Controller;
 use Spatie\QueryBuilder\QueryBuilder;
-use App\Http\Resources\TeamMember as TeamMemberResource;
 
 class TeamMemberController extends Controller
 {

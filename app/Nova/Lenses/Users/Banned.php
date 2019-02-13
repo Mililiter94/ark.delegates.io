@@ -2,13 +2,13 @@
 
 namespace App\Nova\Lenses\Users;
 
-use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Lenses\Lens;
 use Laravel\Nova\Fields\Gravatar;
+use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\LensRequest;
+use Laravel\Nova\Lenses\Lens;
 
 class Banned extends Lens
 {
