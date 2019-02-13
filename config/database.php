@@ -78,6 +78,19 @@ return [
             'prefix'   => '',
         ],
 
+        'ark-eloquent' => [
+            'driver'   => 'pgsql',
+            'host'     => env('ARK_DB_HOST', '127.0.0.1'),
+            'port'     => env('ARK_DB_PORT', '5432'),
+            'database' => env('ARK_DB_DATABASE', 'ark'),
+            'username' => env('ARK_DB_USERNAME', 'ark'),
+            'password' => env('ARK_DB_PASSWORD', ''),
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+            'sslmode'  => 'prefer',
+        ],
+
     ],
 
     /*

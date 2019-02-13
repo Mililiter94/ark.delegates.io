@@ -5,7 +5,6 @@ namespace App\Console\Commands\Polling;
 use App\Models\Delegate;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
-use GrahamCampbell\GuzzleFactory\GuzzleFactory;
 
 class PollAvatars extends Command
 {
@@ -26,11 +25,11 @@ class PollAvatars extends Command
         Delegate::all()->each(function ($delegate) {
             $logo = $delegate->extra_attributes->profile['logo'];
 
-            if (! $logo) {
+            if (!$logo) {
                 return $this->pollAvatar($delegate);
             }
 
-            if (! Storage::disk('public')->exists($logo)) {
+            if (!Storage::disk('public')->exists($logo)) {
                 return $this->pollAvatar($delegate);
             }
         });
@@ -38,8 +37,8 @@ class PollAvatars extends Command
 
     /**
      * Poll an arkvatar and store it.
-     * @param  Delegate $delegate
-     * @return void
+     *
+     * @param Delegate $delegate
      */
     private function pollAvatar(Delegate $delegate): void
     {

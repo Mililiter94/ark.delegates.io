@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands\Polling;
 
+use App\Jobs\PollVoters as Job;
 use App\Models\Delegate;
 use App\Services\Ark\Client;
-use App\Jobs\PollVoters as Job;
 use Illuminate\Console\Command;
 
 class PollVoters extends Command
@@ -24,6 +24,8 @@ class PollVoters extends Command
     public function handle(Client $client)
     {
         foreach (Delegate::all() as $delegate) {
+            $this->line('Polling Voters: <info>'.$delegate['username'].'</info>');
+
             Job::dispatch($delegate);
         }
     }

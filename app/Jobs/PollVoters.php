@@ -6,6 +6,7 @@ use App\Models\Delegate;
 use App\Services\Ark\Client;
 use Illuminate\Bus\Queueable;
 use App\Events\VoteWasShifted;
+use App\Services\Ark\Database;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -22,8 +23,6 @@ class PollVoters implements ShouldQueue
 
     /**
      * Create a new job instance.
-     *
-     * @return void
      */
     public function __construct(Delegate $delegate)
     {
@@ -32,28 +31,26 @@ class PollVoters implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle(Client $client)
+    public function handle(Database $database)
     {
         // Current vote data...
-        $votesBefore = $this->delegate->voters()->sum('balance');
+        $votesBefore  = $this->delegate->voters()->sum('balance');
         $activeVoters = $this->delegate->voters()->pluck('address');
 
         // Store voters...
-        $votersList = collect($client->voters($this->delegate['public_key']));
+        $votersList = $database->voters($this->delegate['public_key']);
 
         // Update each voter...
         foreach ($votersList as $voter) {
             // Update...
             $this->delegate->voters()->updateOrCreate([
                 'address' => $voter['address'],
-            ], $voter);
+            ], $voter->toArray());
 
             // Used to be a voter...
-            $wasVoting = $activeVoters->contains($voter['address']);
-            $noLongerVoting = ! $votersList->pluck('address')->contains($voter['address']);
+            $wasVoting      = $activeVoters->contains($voter['address']);
+            $noLongerVoting = !$votersList->pluck('address')->contains($voter['address']);
 
             if ($wasVoting && $noLongerVoting) {
                 Voter::whereAddress($voter['address'])->delete();

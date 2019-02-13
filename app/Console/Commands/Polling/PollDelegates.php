@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Delegate;
 use App\Services\Ark\Client;
 use App\Events\RankWasShifted;
+use App\Services\Ark\Database;
 use Illuminate\Console\Command;
 
 class PollDelegates extends Command
@@ -22,52 +23,53 @@ class PollDelegates extends Command
      *
      * @return mixed
      */
-    public function handle(Client $client)
+    public function handle(Database $database)
     {
-        for ($i = 0; $i < 50; $i++) {
-            $delegates = $client->delegates($i);
+        $delegates = $database->delegates();
 
-            foreach ($delegates as $delegate) {
-                $this->line('Polling Delegate: <info>'.$delegate['username'].'</info>');
+        for ($i = 0; $i < count($delegates); $i++) {
+            $delegate = $delegates[$i];
 
-                try {
-                    $model = Delegate::findByUsername($delegate['username']);
-                } catch (\Exception $e) {
-                    $model = User::first()->delegates()->updateOrCreate([
-                        'country_id' => 1,
-                        'username'   => $delegate['username'],
-                        'address'    => $delegate['address'],
-                        'public_key' => $delegate['publicKey'],
-                        'rank'       => $delegate['rate'],
-                        'votes'      => $delegate['vote'],
-                    ]);
+            $this->line('Polling Delegate: <info>'.$delegate['username'].'</info>');
 
-                    $model->extra_attributes = $this->getDefaultSettings();
-                }
-
-                // Store the old rank to compare
-                $oldRank = $model->rank;
-
-                // Update rank & votes
-                $model->update([
-                    'rank'  => $delegate['rate'],
-                    'votes' => $delegate['vote'],
+            try {
+                $model = Delegate::findByUsername($delegate['username']);
+            } catch (\Exception $e) {
+                $model = User::first()->delegates()->updateOrCreate([
+                    'country_id' => 1,
+                    'username'   => $delegate['username'],
+                    'address'    => $delegate['address'],
+                    'public_key' => $delegate['public_key'],
+                    'rank'       => $i + 1,
+                    'votes'      => $delegate['vote_balance'],
                 ]);
 
-                // Update
-                $model->extra_attributes->set('statistics.producedBlocks', $delegate['producedblocks']);
-                $model->extra_attributes->set('statistics.missedBlocks', $delegate['missedblocks']);
-                $model->extra_attributes->set('statistics.approval', $delegate['approval']);
-                $model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
-                $model->save();
-
-                // Ranks changed, notify subscribers
-                if ($oldRank !== $model->rank) {
-                    event(new RankWasShifted($model));
-                }
-
-                $model->save();
+                $model->extra_attributes = $this->getDefaultSettings();
             }
+
+            // Store the old rank to compare
+            $oldRank = $model->rank;
+
+            // Update rank & votes
+            $model->update([
+                'rank'  => $i + 1,
+                'votes' => $delegate['vote_balance'],
+            ]);
+
+            // Update
+            $model->extra_attributes->set('statistics.producedBlocks', $delegate['produced_blocks']);
+            $model->extra_attributes->set('statistics.missedBlocks', $delegate['missed_blocks']);
+            // @TODO: calculate or grab from API
+            // $model->extra_attributes->set('statistics.approval', $delegate['approval']);
+            // $model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
+            $model->save();
+
+            // Ranks changed, notify subscribers
+            if ($oldRank !== $model->rank) {
+                event(new RankWasShifted($model));
+            }
+
+            $model->save();
         }
     }
 

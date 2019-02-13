@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63bf9d1fe921ede7d6d4ffba3a16d798",
+    "content-hash": "3cec50278dbd477b565f7983e72df154",
     "packages": [
         {
             "name": "arkecosystem/crypto",
@@ -118,6 +118,69 @@
                 "currency"
             ],
             "time": "2018-11-25T10:07:25+00:00"
+        },
+        {
+            "name": "arkx/ark-eloquent",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/faustbrian/ark-eloquent.git",
+                "reference": "7dbb22cebef5d9e1e56178458f3c4497a6649266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/faustbrian/ark-eloquent/zipball/7dbb22cebef5d9e1e56178458f3c4497a6649266",
+                "reference": "7dbb22cebef5d9e1e56178458f3c4497a6649266",
+                "shasum": ""
+            },
+            "require": {
+                "arkecosystem/crypto": "^0.3.0",
+                "illuminate/database": "^5.7",
+                "illuminate/support": "^5.7",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^5.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "ArkX\\Eloquent\\EloquentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ArkX\\Eloquent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Faust",
+                    "email": "hello@brianfaust.me",
+                    "homepage": "https://brianfaust.me"
+                }
+            ],
+            "description": "A Laravel Eloquent bridge for Ark Core.",
+            "keywords": [
+                "ark",
+                "blockchain",
+                "crypto",
+                "currency",
+                "database",
+                "eloquent",
+                "laravel"
+            ],
+            "time": "2018-12-19T16:38:45+00:00"
         },
         {
             "name": "authy/php",

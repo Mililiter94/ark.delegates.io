@@ -5,6 +5,7 @@ namespace App\Console\Commands\Polling;
 use App\Models\Delegate;
 use App\Services\Ark\Client;
 use App\Events\BlockWasMissed;
+use App\Services\Ark\Database;
 use Illuminate\Console\Command;
 
 class PollBlocks extends Command
@@ -21,14 +22,14 @@ class PollBlocks extends Command
      *
      * @return mixed
      */
-    public function handle(Client $client)
+    public function handle(Database $database)
     {
         $delegates = Delegate::forging()->get();
 
         foreach ($delegates as $delegate) {
             $this->line('Polling Block: <info>'.$delegate['username'].'</info>');
 
-            $block = $client->lastBlock($delegate['public_key']);
+            $block = $database->lastBlock($delegate['public_key']);
 
             $delegate->extra_attributes->last_block = (string) humanize_epoch($block['timestamp']);
             $delegate->save();
