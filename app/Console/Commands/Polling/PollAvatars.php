@@ -17,19 +17,6 @@ class PollAvatars extends Command
     protected $signature = 'ark:poll:avatars';
 
     /**
-     * Create a new command instance.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->client = GuzzleFactory::make([
-            'base_uri'        => 'https://www.arkvatar.com/arkvatar/',
-            'allow_redirects' => false,
-        ]);
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -58,9 +45,7 @@ class PollAvatars extends Command
     {
         $this->line('Polling Delegate: <info>'.$delegate['username'].'</info>');
 
-        $response = $this->client->get($delegate['address']);
-
-        $delegate->extra_attributes->set('profile.logo', $response->getHeader('Location')[0]);
+        $delegate->extra_attributes->set('profile.logo', 'https://api.adorable.io/avatars/512/'.$delegate['address']);
         $delegate->save();
     }
 }
