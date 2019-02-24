@@ -27,18 +27,6 @@ services:
      - .:/var/www/html
     networks:
      - vessel
-  pgsql:
-    image: postgres:10.0
-    ports:
-     - "${MYSQL_PORT}:5432"
-    environment:
-      POSTGRES_USER: "${DB_USERNAME}"
-      POSTGRES_PASSWORD: "${DB_PASSWORD}"
-      POSTGRES_DB: "${DB_DATABASE}"
-    volumes:
-     - vesselmysql:/var/lib/postgresql/data
-    networks:
-     - vessel
   redis:
     image: redis:alpine
     volumes:

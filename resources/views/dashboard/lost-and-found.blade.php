@@ -29,7 +29,7 @@
                                 <a href="{{ route('delegate', $delegate) }}">{{ $delegate->username }}</a>
                             </td>
                             <td>
-                                {{ $delegate->formatted_votes }} Ѧ
+                                {{ $delegate->formatted_votes }} XQR
                             </td>
                             <td>
                                 {{ $delegate->statistics['productivity'] }}%
@@ -55,7 +55,7 @@
                             Wallet {{ $delegate->address }}<br>
                             <span>{{ $delegate->is_verified ? $delegate->verified_at->toDayDateTimeString() : 'No' }}</span>
                         </span>
-                        <span class="text-sm">{{ $delegate->formatted_earnings }} Ѧ</span>
+                        <span class="text-sm">{{ $delegate->formatted_earnings }} XQR</span>
                     </li>
                 @endforeach
             </ul>

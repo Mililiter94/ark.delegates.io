@@ -156,6 +156,7 @@ return [
         App\Providers\AuthyServiceProvider::class,
         App\Providers\DuskServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\NovaServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
         // App\Providers\TelescopeServiceProvider::class,
         App\Providers\NavigationServiceProvider::class,

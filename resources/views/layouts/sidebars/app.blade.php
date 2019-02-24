@@ -5,7 +5,7 @@
 
     <div>
         <p>{{ $forgingTotals['voters'] }} Voters</p>
-        <h3>{{ $forgingTotals['votes_percent'] }}% of Ѧ</h3>
+        <h3>{{ $forgingTotals['votes_percent'] }}% of XQR</h3>
     </div>
 
     <div>
@@ -15,15 +15,15 @@
     <ul class="info-list">
         <li>
             <span>Votes</span>
-            <span>{{ $forgingTotals['votes'] }} Ѧ</span>
+            <span>{{ $forgingTotals['votes'] }} XQR</span>
         </li>
         <li>
             <span>Remaining Supply</span>
-            <span>{{ $forgingTotals['supply_left'] }} Ѧ</span>
+            <span>{{ $forgingTotals['supply_left'] }} XQR</span>
         </li>
         <li>
             <span>Total Supply</span>
-            <span>{{ $forgingTotals['supply'] }} Ѧ</span>
+            <span>{{ $forgingTotals['supply'] }} XQR</span>
         </li>
     </ul>
 

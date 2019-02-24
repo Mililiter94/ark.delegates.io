@@ -6,7 +6,7 @@
     {{-- <div class="balance">
         <span>Outstanding</span>
         <h3>
-            <span class="text-shadow">{{ $totalEarnings }} Ѧ</span>
+            <span class="text-shadow">{{ $totalEarnings }} XQR</span>
         </h3>
     </div>
 

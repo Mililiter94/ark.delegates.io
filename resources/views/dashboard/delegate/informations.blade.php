@@ -20,7 +20,7 @@
 
                 <strong class="block mt-4">Ledger</strong>
                 <ol class="mt-5">
-                    <li class="pb-2">Send a transaction of <strong>0.00000001 Ѧ</strong> to <strong>{{ $delegate->address }}</strong> using your verification code as SmartBridge.</li>
+                    <li class="pb-2">Send a transaction of <strong>0.00000001 XQR</strong> to <strong>{{ $delegate->address }}</strong> using your verification code as SmartBridge.</li>
                     <li>Contact support with the link to your transaction on <a href="https://explorer.ark.io">https://explorer.ark.io</a>.</li>
                 </ol>
             </div>

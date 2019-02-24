@@ -14,13 +14,16 @@ class UserSeeder extends Seeder
         factory(User::class)
             ->create([
                 'email'    => 'trusty@delegates.io',
-                'password' => Hash::make(str_random(128)),
+                'password' => Hash::make('password'),
             ])
             ->assignRole('admin');
 
         if (app()->environment('local', 'testing')) {
             factory(User::class)
-                ->create(['email' => 'dummy@delegates.io'])
+                ->create([
+                'email' => 'dummy@delegates.io',
+                'password' => Hash::make('password'),
+                ])
                 ->assignRole('delegate');
         }
     }

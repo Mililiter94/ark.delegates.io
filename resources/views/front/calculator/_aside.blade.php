@@ -53,7 +53,7 @@
         </li>
         <li>
             <span>Votes</span>
-            <span>@{{ formatArktoshi(chosenDelegate.votes) }} Ѧ</span>
+            <span>@{{ formatArktoshi(chosenDelegate.votes) }} XQR</span>
         </li>
         <li>
             <span>Approval</span>

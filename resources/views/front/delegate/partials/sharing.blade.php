@@ -18,7 +18,7 @@
         @if($delegate->sharing['threshold'] > 0)
             <li>
                 <span>Threshold</span>
-                <span>{{ $delegate->sharing['threshold'] }} Ѧ</span>
+                <span>{{ $delegate->sharing['threshold'] }} XQR</span>
             </li>
         @endif
 

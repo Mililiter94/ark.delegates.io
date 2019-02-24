@@ -17,7 +17,7 @@ class Client
 
     public function supply(): int
     {
-        return $this->get('api/v2/blockchain')['supply'];
+        return $this->get('api/v2/blockchain')['data']['supply'];
     }
 
     public function get(string $path, array $query = []): array

@@ -3,7 +3,7 @@
 namespace App\Console\Commands\Polling;
 
 use App\Models\Delegate;
-use App\Services\Ark\Client;
+use App\Services\Ark\Database;
 use Illuminate\Console\Command;
 
 class PollVotersCount extends Command
@@ -20,12 +20,12 @@ class PollVotersCount extends Command
      *
      * @return mixed
      */
-    public function handle(Client $client)
+    public function handle(Database $database)
     {
         foreach (Delegate::all() as $delegate) {
             $this->line('Polling Voters: <info>'.$delegate['username'].'</info>');
 
-            $votersList = collect($client->voters($delegate['public_key']));
+            $votersList = collect($database->voters($delegate['public_key']));
 
             $delegate->extra_attributes->set('statistics.voters', $votersList->count());
             $delegate->save();

@@ -31,19 +31,19 @@ class NavigationServiceProvider extends ServiceProvider
     public function register()
     {
         Menu::macro('iconRoute', function ($route, $icon, $title, $condition = true) {
-            $link = Link::toRoute($route, sprintf('<i class="far fa-%s"></i>', $icon))->setAttribute('title', $title);
+            $link = Link::toRoute($route, sprintf('<i class="far fa-%s"></i>', $icon, $title))->setAttribute('title', $title);
 
             return $this->addIf($condition, $link);
         });
 
         Menu::macro('iconLink', function ($url, $icon, $title) {
-            $link = Link::toUrl($url, sprintf('<i class="far fa-%s"></i>', $icon))->setAttribute('title', $title);
+            $link = Link::toUrl($url, sprintf('<i class="far fa-%s"></i>', $icon, $title))->setAttribute('title', $title);
 
             return $this->add($link);
         });
 
         Menu::macro('iconBadge', function ($route, $icon, $title, $condition) {
-            $contents = sprintf('<i class="far fa-%s"></i>', $icon);
+            $contents = sprintf('<i class="far fa-%s"></i>', $icon, $title);
 
             if ($condition) {
                 $contents .= Html::raw(sprintf('<span>%s</span>', $condition))->html();

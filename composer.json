@@ -43,6 +43,7 @@
         "vinkla/alert": "^3.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
         "beyondcode/laravel-dump-server": "~1.0",
         "codedungeon/phpunit-result-printer": "^0.19.12",
         "filp/whoops": "^2.2",

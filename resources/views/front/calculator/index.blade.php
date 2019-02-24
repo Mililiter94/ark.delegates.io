@@ -51,19 +51,19 @@
                             </th>
                             <th @click="sortBy('sharePerDay')">
                                 <i :class="sortIcon('sharePerDay')"></i>
-                                Ѧ Per Day
+                                XQR Per Day
                             </th>
                             <th @click="sortBy('sharePerWeek')" class="hidden md:table-cell">
                                 <i :class="sortIcon('sharePerWeek')"></i>
-                                Ѧ Per Week
+                                XQR Per Week
                             </th>
                             <th @click="sortBy('sharePerMonth')" class="hidden md:table-cell">
                                 <i :class="sortIcon('sharePerMonth')"></i>
-                                Ѧ Per Month
+                                XQR Per Month
                             </th>
                             <th @click="sortBy('sharePerYear')" class="hidden md:table-cell">
                                 <i :class="sortIcon('sharePerYear')"></i>
-                                Ѧ Per Year
+                                XQR Per Year
                             </th>
                         </tr>
                     </thead>

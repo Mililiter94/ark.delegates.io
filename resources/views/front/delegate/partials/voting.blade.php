@@ -8,14 +8,14 @@
         @if($delegate->voting['requirements']['min_balance'] > 0)
             <li>
                 <span>Minimum Balance</span>
-                <span>{{ $delegate->voting['requirements']['min_balance'] }} Ѧ</span>
+                <span>{{ $delegate->voting['requirements']['min_balance'] }} XQR</span>
             </li>
         @endif
 
         @if($delegate->voting['requirements']['max_balance'] > 0)
             <li>
                 <span>Maximum Balance</span>
-                <span>{{ $delegate->voting['requirements']['max_balance'] }} Ѧ</span>
+                <span>{{ $delegate->voting['requirements']['max_balance'] }} XQR</span>
             </li>
         @endif
 

@@ -1,7 +1,7 @@
 <nav class="left-nav lg:block">
     <div>
         <a class="brand" href="{{ route('home') }}" title="Home">
-            <img src="/images/logo.svg" />
+            <img src="/images/qredit-icon2.png" />
         </a>
     </div>
 
