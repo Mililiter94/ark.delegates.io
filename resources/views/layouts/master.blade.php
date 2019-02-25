@@ -44,5 +44,7 @@
     <script src={{ asset('js/app.js') }}></script>
     @stack('scripts')
 
-   
+    @auth
+        @include('layouts.partials.beacon')
+    @endauth
 </html>
