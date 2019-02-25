@@ -29,7 +29,7 @@
         <meta name="twitter:description" content="Easily find out who is a delegate, what they do and can offer the ecosystem.">
         {{-- Styles --}}
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
         <link rel="shortcut icon" href="{{ asset('favicon.png')}}">
         @include('layouts.partials.cookie-consent')
         @stack('styles')
