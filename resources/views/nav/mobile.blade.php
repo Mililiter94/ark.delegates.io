@@ -1,7 +1,7 @@
 {{-- Top-Nav --}}
 <nav class="flex lg:hidden shadow h-16 bg-white w-full sticky pin-t">
     <div class="flex flex-no-shrink">
-        <img class="inline-block h-16 w-auto" src="/images/logo.svg" />
+        <img class="inline-block h-16 w-auto" src="/images/qredit-icon2.png" />
     </div>
 
     <div class="flex justify-around sm:justify-between items-center w-full">
