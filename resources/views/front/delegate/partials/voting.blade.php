@@ -1,7 +1,7 @@
 <div class="content white heading">
     <div class="kicker">
         <h4 class="mb-3">Requirements</h4>
-        <p>ARK delegates differ in what requirements they place upon their voters. Some delegates require you to hold a minimum amount of ARK to receive payouts; some delegates won't pay out votes from wallets holding ARK over a defined maximum. We've done our best to collect those requirements here, but you should always reach out to your delegate to confirm should you have further questions.</p>
+        <p>Qredit delegates differ in what requirements they place upon their voters. Some delegates require you to hold a minimum amount of XQR to receive payouts; some delegates won't pay out votes from wallets holding XQR over a defined maximum. We've done our best to collect those requirements here, but you should always reach out to your delegate to confirm should you have further questions.</p>
     </div>
 
     <ul>

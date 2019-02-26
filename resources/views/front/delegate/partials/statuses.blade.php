@@ -1,7 +1,7 @@
 <div class="content white heading overflow-hidden">
     <div class="kicker">
         <h4 class="mb-3">Statuses</h4>
-        <p>All delegates should regularly inform voters of their progress in accomplishing the goals set out in their proposal. There are many ways for delegates to get in contact — either through this website or through official ARK communications channels. Delegates who can't keep you updated on their status may not deserve your vote.</p>
+        <p>All delegates should regularly inform voters of their progress in accomplishing the goals set out in their proposal. There are many ways for delegates to get in contact — either through this website or through official Qredit communications channels. Delegates who can't keep you updated on their status may not deserve your vote.</p>
     </div>
 
     @if($subscribed === 'yes')

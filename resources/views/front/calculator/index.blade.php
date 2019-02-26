@@ -8,14 +8,14 @@
 
                 <div class="flex items-center mt-8">
                     <div>
-                        <label>ARK Balance</label>
+                        <label>XQR Balance</label>
                         <input type="number" v-model="balance" @keydown="calculate" min="1" max="10000000" />
                     </div>
 
                     <div class="mt-6 mx-6 text-blue-lighter text-sm">or</div>
 
                     <div>
-                        <label>ARK Address</label>
+                        <label>XQR Address</label>
                         <input type="text" v-model="address" @keydown="fetchWallet" />
                     </div>
                 </div>

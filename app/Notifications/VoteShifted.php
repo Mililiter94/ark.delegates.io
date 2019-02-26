@@ -48,7 +48,7 @@ class VoteShifted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-            ->line('Attention! The winds of change are blowing, and ARK votes for '.$this->delegate->username.' have shifted. Please follow the link to see how your payout might be affected.')
+            ->line('Attention! The winds of change are blowing, and XQR votes for '.$this->delegate->username.' have shifted. Please follow the link to see how your payout might be affected.')
             ->action('View Delegate', route('delegate', $this->delegate))
             ->line('Thank you for your continued support and happy stacking!');
     }

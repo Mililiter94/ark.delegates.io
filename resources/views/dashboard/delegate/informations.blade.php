@@ -13,7 +13,7 @@
 
                 <strong class="block mt-4">Desktop Wallet</strong>
                 <ol class="mt-5">
-                    <li class="pb-2">Copy the verification code and sign it using the <a href="https://github.com/ArkEcosystem/ark-desktop">ARK Desktop Wallet</a>.</li>
+                    <li class="pb-2">Copy the verification code and sign it using the <a href="https://github.com/ArkEcosystem/ark-desktop">Qredit Desktop Wallet</a>.</li>
                     <li class="pb-2">Copy the JSON that you receive after signing the message.</li>
                     <li>Paste the JSON into the textarea below and hit verify.</li>
                 </ol>

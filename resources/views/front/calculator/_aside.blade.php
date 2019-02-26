@@ -6,7 +6,7 @@
     <div>
         <p>
             <span class="highlight">
-                These calculations are rough estimates of how many ARK you will earn
+                These calculations are rough estimates of how many XQR you will earn
                 per day.
             </span>
 
