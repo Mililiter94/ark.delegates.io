@@ -36,8 +36,8 @@ module.exports = {
 
     watch: {
         balance: function(value) {
-            if (value >= 2000000) {
-                this.balance = 2000000
+            if (value >= 20000000) {
+                this.balance = 20000000
             }
 
             this.calculate()
