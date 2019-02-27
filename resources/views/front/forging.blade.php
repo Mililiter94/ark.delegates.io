@@ -43,7 +43,7 @@
 
                 <li>
                     <span>Username</span>
-                    <span class="text-right"><a href="https://explorer.ark.io/wallets/{{ $delegate['address'] }}">{{ $delegate['username'] }}</a></span>
+                    <span class="text-right"><a href="https://explorer.qredit.network/#/wallets/{{ $delegate['address'] }}">{{ $delegate['username'] }}</a></span>
                 </li>
 
                 <li>

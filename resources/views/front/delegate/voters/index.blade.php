@@ -21,7 +21,7 @@
             <tbody>
                 @foreach ($voters as $voter)
                     <tr>
-                        <td><a href="https://explorer.qredit.io/wallets/{{ $voter->address }}" target="_blank">{{ $voter->address }}</a></td>
+                        <td><a href="https://explorer.qredit.network/#/wallets/{{ $voter->address }}" target="_blank">{{ $voter->address }}</a></td>
                         <td>{{ format_arktoshi($voter->balance, 0) }}</td>
                         <td>{{ $voter->is_excluded ? 'Yes' : 'No' }}</td>
                     </tr>
@@ -33,7 +33,7 @@
             <ul class="info-list sm:hidden">
                 <li>
                     <span>Address</span>
-                    <span class="text-right"><a href="https://explorer.qredit.io/wallets/{{ $voter->address }}" target="_blank">{{ $voter->address }}</a></span>
+                    <span class="text-right"><a href="https://explorer.qredit.network/#/wallets/{{ $voter->address }}" target="_blank">{{ $voter->address }}</a></span>
                 </li>
 
                 <li>
