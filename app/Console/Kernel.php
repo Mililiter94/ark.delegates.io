@@ -30,6 +30,11 @@ class Kernel extends ConsoleKernel
             ->withoutOverlapping();
 
         $schedule
+            ->command('ark:poll:approval')
+            ->everyFiveMinutes()
+            ->withoutOverlapping();
+
+       $schedule
             ->command('ark:poll:supply')
             ->everyFiveMinutes()
             ->withoutOverlapping();

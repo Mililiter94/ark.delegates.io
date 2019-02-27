@@ -17,7 +17,7 @@
             @foreach ($voters->chunk(10) as $chunk)
                 @foreach ($chunk as $voter)
                     <tr>
-                        <td><a href="https://explorer.ark.io/wallets/{{ $voter['address'] }}">{{ $voter['address'] }}</a></td>
+                        <td><a href="https://explorer.qredit.io/wallets/{{ $voter['address'] }}">{{ $voter['address'] }}</a></td>
                         <td>{{ format_arktoshi($voter['balance'], 0) }} XQR</td>
                         <td>{{ format_number(($voter['balance'] / $delegate->votes) * 100, 4) }}%</td>
                     </tr>
