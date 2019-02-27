@@ -59,8 +59,8 @@ class PollDelegates extends Command
             $model->extra_attributes->set('statistics.producedBlocks', $delegate['produced_blocks']);
             $model->extra_attributes->set('statistics.missedBlocks', $delegate['missed_blocks']);
             // @TODO: calculate or grab from API
-            $model->extra_attributes->set('statistics.approval', $delegate['approval']);
-            $model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
+            //$model->extra_attributes->set('statistics.approval', $delegate['approval']);
+            //$model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
             $model->save();
 
             // Ranks changed, notify subscribers

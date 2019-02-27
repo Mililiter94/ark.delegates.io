@@ -20,6 +20,14 @@ class Client
         return $this->get('api/v2/blockchain')['data']['supply'];
     }
 
+    public function delegates(): array
+    {
+        $api_delegates = $this->get('api/delegates')['delegates'];
+        $api_delegates2 = $this->get('api/delegates?offset=51')['delegates'];
+        return array_merge($api_delegates, $api_delegates2);
+
+    }
+
     public function get(string $path, array $query = []): array
     {
         $response = $this->client->get($path, compact('query'));
