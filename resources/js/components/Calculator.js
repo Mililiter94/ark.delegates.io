@@ -61,7 +61,7 @@ module.exports = {
         fetchWallet() {
             if (this.address) {
                 axios
-                    .get(`https://explorer.ark.io:8443/api/accounts?address=${this.address}`)
+                    .get(`https://node.qredit.network/api/accounts?address=${this.address}`)
                     .then(response => (this.balance = response.data.account.balance / Math.pow(10, 8)))
                     .then(() => this.calculate())
             }
