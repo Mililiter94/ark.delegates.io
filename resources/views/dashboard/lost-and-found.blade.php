@@ -32,7 +32,7 @@
                                 {{ $delegate->formatted_votes }} XQR
                             </td>
                             <td>
-                                {{ $delegate->statistics['productivity'] }}%
+                                {{ $delegate->statistics['productivity'] ?? 0 }}%
                             </td>
                             <td class="text-right">
                                 <a href="{{ route('dashboard.lost-and-found.claim', $delegate) }}" class="button-grey">Claim</a>
