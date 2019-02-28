@@ -4,8 +4,8 @@
     </div>
 
     <div>
-        <p>{{ $delegate->statistics['voters'] }} Voters</p>
-        <h3>{{ $delegate->statistics['approval'] }}% of Total Voters</h3>
+        <p>{{ $delegate->statistics['voters'] ?? 0 }} Voters</p>
+        <h3>{{ $delegate->statistics['approval'] ?? 0 }}% of Total Voters</h3>
     </div>
 
     <div>
