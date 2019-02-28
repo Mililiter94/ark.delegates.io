@@ -26,15 +26,15 @@ class CacheCalculator extends Command
         Cache::forget('calculator');
 
         Cache::rememberForever('calculator', function () {
-            return Delegate::forging()->get()->map(function ($delegate) {
+            return Delegate::top60()->get()->map(function ($delegate) {
                 return [
                     'rank'         => $delegate->rank,
                     'username'     => $delegate->username,
-                    'share'        => $delegate->sharing['percentage'],
+                    'share'        => $delegate->sharing['percentage'] ?? 0,
                     'votes'        => $delegate->votes,
                     'excluded'     => $delegate->excludedVoters()->sum('balance'),
-                    'productivity' => $delegate->statistics['productivity'],
-                    'approval'     => $delegate->statistics['approval'],
+                    'productivity' => $delegate->statistics['productivity'] ?? 0,
+                    'approval'     => $delegate->statistics['approval'] ?? 0,
                     'settings'     => [
                         'sharing'    => $delegate->sharing,
                         'voting'     => $delegate->voting,

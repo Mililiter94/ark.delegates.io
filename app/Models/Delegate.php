@@ -161,6 +161,11 @@ class Delegate extends Model
         return $query->where('rank', '<=', 51)->orderBy('rank', 'ASC');
     }
 
+    public function scopeTop60(Builder $query)
+    {
+        return $query->where('rank', '<=', 60)->orderBy('rank', 'ASC');
+    }
+
     /**
      * Scope a query to only include delegates outside the top 51.
      *

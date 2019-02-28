@@ -25,9 +25,9 @@
                         <td>{{ $delegate->rank }}</td>
                         <td>{{ ucfirst($delegate->type) }}</td>
                         <td><a href="{{ route('delegate', $delegate->username) }}">{{ $delegate['username'] }}</a></td>
-                        <td>{{ $delegate->statistics['approval'] }}%</td>
+                        <td>{{ $delegate->statistics['approval'] ?? "" }}%</td>
                         <td>{{ format_arktoshi($delegate->votes, 0) }}</td>
-                        <td>{{ $delegate->statistics['voters'] }}</td>
+                        <td>{{ $delegate->statistics['voters'] ?? "" }}</td>
                         <td class="text-right">{{ $delegate->last_block_time->diffForHumans() }} <span class="delegates-status bg-{{ $delegate->status }}"></span></td>
                     </tr>
                 @endforeach
