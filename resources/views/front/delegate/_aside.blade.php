@@ -10,7 +10,7 @@
 
     <div>
         <ProgressBar
-            :percentage="{{ $delegate->statistics['approval'] }}"
+            :percentage="{{ $delegate->statistics['approval'] ?? 0 }}"
             :width="271"
             shadow-color="#27d876"
             stroke-color="#caead8"></ProgressBar>
