@@ -14,12 +14,12 @@
 
         <div class="sm:border-r pr-8 ml-0 sm:ml-8">
             <span>Productivity</span>
-            <p>{{ $delegate->statistics['productivity'] }}%</p>
+            <p>{{ $delegate->statistics['productivity'] ?? 0 }}%</p>
         </div>
 
         <div class="sm:border-r pr-8 ml-0 sm:ml-8">
             <span>Approval</span>
-            <p>{{ $delegate->statistics['approval'] }}%</p>
+            <p>{{ $delegate->statistics['approval'] ?? 0 }}%</p>
         </div>
 
         <div class="ml-8">
