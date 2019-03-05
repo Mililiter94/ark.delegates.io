@@ -10,8 +10,8 @@
             <thead>
                 <tr>
                     <th>Rank</th>
-                    <th>Type</th>
                     <th>Username</th>
+                    <th>Sharing</th>
                     <th>Votes in Percent</th>
                     <th>Votes</th>
                     <th>Voters</th>
@@ -23,11 +23,11 @@
                 @foreach ($delegates as $delegate)
                     <tr>
                         <td>{{ $delegate->rank }}</td>
-                        <td>{{ ucfirst($delegate->type) }}</td>
                         <td><a href="{{ route('delegate', $delegate->username) }}">{{ $delegate['username'] }}</a></td>
+                        <td>{{ $delegate->sharing['percentage'] ?? 0 }}%</td>
                         <td>{{ $delegate->statistics['approval'] ?? 0 }}%</td>
                         <td>{{ format_arktoshi($delegate->votes, 0) }}</td>
-                        <td>{{ $delegate->statistics['voters'] ?? "" }}</td>
+                        <td>{{ $delegate->statistics['voters'] ?? 0 }}</td>
                         <td class="text-right">{{ $delegate->last_block_time->diffForHumans() }} <span class="delegates-status bg-{{ $delegate->status }}"></span></td>
                     </tr>
                 @endforeach
