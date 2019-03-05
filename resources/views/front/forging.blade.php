@@ -6,7 +6,7 @@
     </div>
 
     <div class="page-top-100">
-        <table class="hidden sm:table">
+        <table class="xhidden sm:table">
             <thead>
                 <tr>
                     <th>Rank</th>
@@ -35,7 +35,7 @@
         </table>
 
         @foreach ($delegates as $delegate)
-            <ul class="info-list sm:hidden">
+            <ul class="info-list hidden">
                 <li>
                     <span>Rank</span>
                     <span class="text-right">{{ $delegate->rank }}</span>
