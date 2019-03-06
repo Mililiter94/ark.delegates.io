@@ -14,7 +14,7 @@
                     <th>Sharing</th>
                     <th>Votes in Percent</th>
                     <th>Votes</th>
-                    <th>Voters</th>
+                    <th class="hidden sm:table-cell">Voters</th>
                     <th class="text-right">Status</th>
                 </tr>
             </thead>
@@ -27,8 +27,8 @@
                         <td>{{ $delegate->sharing['percentage'] ?? 0 }}%</td>
                         <td>{{ $delegate->statistics['approval'] ?? 0 }}%</td>
                         <td>{{ format_arktoshi($delegate->votes, 0) }}</td>
-                        <td>{{ $delegate->statistics['voters'] ?? 0 }}</td>
-                        <td class="text-right">{{ $delegate->last_block_time->diffForHumans() }} <span class="delegates-status bg-{{ $delegate->status }}"></span></td>
+                        <td class="hidden sm:table-cell">{{ $delegate->statistics['voters'] ?? 0 }}</td>
+                        <td class="text-right"><span class="hidden sm:inline">{{ $delegate->last_block_time->diffForHumans() }}</span> <span class="delegates-status bg-{{ $delegate->status }}"></span></td>
                     </tr>
                 @endforeach
             </tbody>
@@ -58,7 +58,7 @@
 
                 <li>
                     <span>Status</span>
-                    <span class="text-right">{{ $delegate->last_block_time->diffForHumans() }} <span class="delegates-status bg-{{ $delegate->status }}"></span></span>
+                    <span class="text-right"><span class="hidden sm:inline">{{ $delegate->last_block_time->diffForHumans() }}</span> <span class="delegates-status bg-{{ $delegate->status }}"></span></span>
                 </li>
             </ul>
         @endforeach
