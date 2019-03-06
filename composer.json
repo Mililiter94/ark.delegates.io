@@ -17,6 +17,7 @@
         "erusev/parsedown-extra": "^0.7.1",
         "fideloper/proxy": "^4.0",
         "graham-campbell/guzzle-factory": "^3.0",
+        "graham-campbell/markdown": "^10.3",
         "laravel/framework": "5.7.*",
         "laravel/horizon": "^2.0",
         "laravel/nova": "~1.0",
