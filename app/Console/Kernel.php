@@ -26,12 +26,12 @@ class Kernel extends ConsoleKernel
 
         $schedule
             ->command('ark:poll:delegates')
-            ->everyFiveMinutes()
+            ->everyMinute()
             ->withoutOverlapping();
 
         $schedule
             ->command('ark:poll:approval')
-            ->everyFiveMinutes()
+            ->everyMinute()
             ->withoutOverlapping();
 
        $schedule
@@ -41,17 +41,17 @@ class Kernel extends ConsoleKernel
 
         $schedule
             ->command('ark:poll:blocks')
-            ->everyFiveMinutes()
+            ->everyMinute()
             ->withoutOverlapping();
 
         $schedule
             ->command('ark:poll:voters-count')
-            ->everyFifteenMinutes()
+            ->everyFiveMinutes()
             ->withoutOverlapping();
 
         $schedule
             ->command('ark:poll:voters')
-            ->everyFifteenMinutes()
+            ->everyFiveMinutes()
             ->withoutOverlapping();
 
         $schedule
@@ -66,7 +66,7 @@ class Kernel extends ConsoleKernel
 
         $schedule
             ->command('ark:cache:forging')
-            ->everyFiveMinutes()
+            ->everyMinute()
             ->withoutOverlapping();
 
         $schedule
