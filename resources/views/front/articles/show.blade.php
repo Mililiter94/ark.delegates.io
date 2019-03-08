@@ -12,12 +12,14 @@
         </div>
 
         <div class="markdown-body">
-            {!! parsedown($article->body) !!}
+        
+            @markdown($article->body)
+
+
         </div>
 
         <hr>
 
-        <em class="inline-block bg-yellow p-2">Thank you for your continued support and happy stacking!</em>
     </div>
 
 @endsection
