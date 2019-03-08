@@ -11,7 +11,7 @@
             <p class="text-grey text-sm my-3">{{ $article->created_at->toDayDateTimeString() }}</p>
         </div>
 
-        <div id="announcement-content">
+        <div class="markdown-body">
             {!! parsedown($article->body) !!}
         </div>
 
