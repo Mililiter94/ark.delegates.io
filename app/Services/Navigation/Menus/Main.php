@@ -17,7 +17,8 @@ class Main
                 ->registerFilter(function (Link $link) {
                     $link->addClass('mb-5');
                 })
-                ->iconBadge('announcements', 'bullhorn', 'Announcements', Announcement::get()->filter->is_recent->count());
+                ->iconBadge('announcements', 'bullhorn', 'Announcements', Announcement::get()->filter->is_recent->count())
+                ->iconRoute('articles', 'book', 'Articles');
         });
     }
 }

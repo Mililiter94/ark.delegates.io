@@ -19,6 +19,11 @@ Route::get('announcements', 'AnnouncementController@index')->name('announcements
 Route::post('announcements/search', 'AnnouncementController@search')->name('announcements.search');
 Route::get('announcements/{announcement}', 'AnnouncementController@show')->name('announcement');
 
+// Articles...
+Route::get('articles', 'ArticleController@index')->name('articles');
+Route::post('articles/search', 'ArticleController@search')->name('articles.search');
+Route::get('articles/{article}', 'ArticleController@show')->name('article');
+
 // Calculator...
 Route::get('calculator', 'CalculatorController@index')->name('calculator');
 Route::post('calculator', 'CalculatorController@calculate');
