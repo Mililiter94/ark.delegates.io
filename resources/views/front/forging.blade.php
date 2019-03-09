@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="p-8">
-        <h2>Top 51 Delegates</h2>
+        <h2>Top 70 Delegates</h2>
     </div>
 
     <div class="page-top-100">
