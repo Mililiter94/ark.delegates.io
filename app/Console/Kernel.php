@@ -61,7 +61,7 @@ class Kernel extends ConsoleKernel
 
         $schedule
             ->command('ark:cache:calculator')
-            ->everyFiveMinutes()
+            ->everyMinute()
             ->withoutOverlapping();
 
         $schedule

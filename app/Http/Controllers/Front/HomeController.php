@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('front.forging', [
-            'delegates' => Delegate::forging()->get(),
+            'delegates' => Delegate::top70()->get(),
         ]);
     }
 }
