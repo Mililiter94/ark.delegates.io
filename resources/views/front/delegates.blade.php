@@ -48,7 +48,7 @@
 
                 <li>
                     <span>Votes in Percentage</span>
-                    <span class="text-right">{{ $delegate->statistics['approval'] }}%</span>
+                    <span class="text-right">{{ $delegate->statistics['approval'] ?? 0 }}%</span>
                 </li>
 
                 <li>
