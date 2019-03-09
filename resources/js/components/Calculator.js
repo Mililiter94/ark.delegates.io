@@ -71,7 +71,7 @@ module.exports = {
 
             if (delegate.settings.calculator.cap_at_maximum_balance === 'yes') {
                 if (delegate.settings.voting.requirements.max_balance > 0) {
-                    balance = delegate.settings.voting.requirements.max_balance * Math.pow(10, 8)
+                    balance = Math.min(balance, delegate.settings.voting.requirements.max_balance * Math.pow(10, 8))
                 }
             }
 
