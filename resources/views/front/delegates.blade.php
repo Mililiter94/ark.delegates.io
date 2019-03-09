@@ -25,10 +25,10 @@
                         <td>{{ $delegate->rank }}</td>
                         <td>{{ ucfirst($delegate->type) }}</td>
                         <td><a href="{{ route('delegate', $delegate) }}">{{ $delegate['username'] }}</a></td>
-                        <td>{{ $delegate->statistics['approval'] }}%</td>
+                        <td>{{ $delegate->statistics['approval'] ?? 0 }}%</td>
                         <td>{{ $delegate->cached_stability }}%</td>
                         <td>{{ format_arktoshi($delegate->votes, 0) }}</td>
-                        <td>{{ $delegate->statistics['voters'] }}</td>
+                        <td>{{ $delegate->statistics['voters'] ?? 0 }}</td>
                     </tr>
                 @endforeach
             </tbody>
