@@ -56,7 +56,7 @@ module.exports = {
                 return delegate
             })
 
-            this.sortBy('rank')
+            //this.sortBy('rank')
         },
         fetchWallet() {
             if (this.address) {
