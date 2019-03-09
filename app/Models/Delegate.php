@@ -161,9 +161,9 @@ class Delegate extends Model
         return $query->where('rank', '<=', 51)->orderBy('rank', 'ASC');
     }
 
-    public function scopeTop70(Builder $query)
+    public function scopeTop60(Builder $query)
     {
-        return $query->where('rank', '<=', 70)->orderBy('rank', 'ASC');
+        return $query->where('rank', '<=', 60)->orderBy('rank', 'ASC');
     }
 
     /**
