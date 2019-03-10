@@ -28,7 +28,7 @@
                         <td>{{ $delegate->statistics['approval'] ?? 0 }}%</td>
                         <td>{{ format_arktoshi($delegate->votes, 0) }}</td>
                         <td class="hidden sm:table-cell">{{ $delegate->statistics['voters'] ?? 0 }}</td>
-                        <td class="text-right"><span class="hidden sm:inline">{{ $delegate->last_block_time->diffForHumans() }}</span> <span class="delegates-status bg-{{ $delegate->status }}"></span></td>
+                        <td class="text-right"><span class="hidden sm:inline">{{ $delegate->last_block_time->diffForHumans() }}</span> <span class="delegates-status bg-green bg-red bg-yellow bg-orange bg-{{ $delegate->status }}"></span></td>
                     </tr>
                 @endforeach
             </tbody>
