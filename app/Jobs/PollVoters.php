@@ -34,6 +34,7 @@ class PollVoters implements ShouldQueue
     public function handle(Database $database)
     {
         // Current vote data...
+        $oldVoters = $this->delegate->voters();
         $votesBefore  = $this->delegate->voters()->sum('balance');
         $activeVoters = $this->delegate->voters()->pluck('address');
 
@@ -55,7 +56,13 @@ class PollVoters implements ShouldQueue
                 Voter::whereAddress($voter['address'])->delete();
             }
         }
+        foreach ($oldVoters as $voter) {
+            $notVoting = !$votersList->pluck('address')->contains($voter['address']);
 
+            if ($notVoting) {
+                Voter::whereAddress($voter['address'])->delete();
+            }
+        }
         // Compare votes count...
         $votesAfter = $this->delegate->voters()->sum('balance');
 
