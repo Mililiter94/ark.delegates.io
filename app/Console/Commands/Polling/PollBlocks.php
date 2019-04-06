@@ -23,9 +23,9 @@ class PollBlocks extends Command
      */
     public function handle(Database $database)
     {
-        $delegates = Delegate::forging()->get();
+        $delegates = Delegate::top60()->get();
 
-        foreach (Delegate::top60() as $delegate) {
+        foreach ($delegates as $delegate) {
             $this->line('Polling Block: <info>'.$delegate['username'].'</info>');
 
             $block = $database->lastBlock($delegate['public_key']);
