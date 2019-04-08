@@ -23,14 +23,14 @@ class PollApproval extends Command
     public function handle(Client $client)
     {
         $all_delegates = $client->delegates();
-        $rank=0;
+        
         foreach (Delegate::all() as $delegate) {
             $this->line('Polling Approval: <info>'.$delegate['username'].'</info>');
-            $rank++;
-            $oldRank = $delegate->rank;
             
+            $oldRank = $delegate->rank;
+            $rank=0;
             foreach ($all_delegates as $this_delegate) {
-                
+                $rank++;
                 if($delegate['username'] == $this_delegate['username']) {
                     $this->line('Found Approval: <info>'.$this_delegate['username'].' '.$rank.'</info>');
                     $delegate->update([
@@ -39,7 +39,7 @@ class PollApproval extends Command
                      ]);
                     $delegate->extra_attributes->set('statistics.approval', $this_delegate['approval']);
                     $delegate->extra_attributes->set('statistics.productivity', $this_delegate['productivity']);            
-                    
+                    continue;
                 }    
             } 
             $delegate->save();
