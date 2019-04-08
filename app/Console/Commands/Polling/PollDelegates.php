@@ -23,10 +23,10 @@ class PollDelegates extends Command
      *
      * @return mixed
      */
-    public function handle(Database $database)
+    public function handle(Database $database, Client $client)
     {
         $delegates = $database->delegates();
-        $all_delegates = Client::delegates();
+        $all_delegates = $client->delegates();
         for ($i = 0; $i < \count($delegates); ++$i) {
             $delegate = $delegates[$i];
 
