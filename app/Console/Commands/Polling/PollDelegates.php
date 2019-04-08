@@ -26,7 +26,7 @@ class PollDelegates extends Command
     public function handle(Database $database)
     {
         $delegates = $database->delegates();
-        $all_delegates = $client->delegates();
+        $all_delegates = Client::delegates();
         for ($i = 0; $i < \count($delegates); ++$i) {
             $delegate = $delegates[$i];
 
