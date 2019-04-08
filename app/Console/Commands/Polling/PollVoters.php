@@ -25,7 +25,7 @@ class PollVoters extends Command
     {
         foreach (Delegate::all() as $delegate) {
             $this->line('Polling Voters: <info>'.$delegate['username'].'</info>');
-
+            $delegate->voters()->delete();
             Job::dispatch($delegate);
         }
     }
