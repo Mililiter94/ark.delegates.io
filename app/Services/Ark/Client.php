@@ -23,7 +23,7 @@ class Client
     public function delegates(): array
     {
         $api_delegates = $this->get('/api/delegates')['delegates'];
-        $api_delegates2 = $this->get('/api/delegates?offset=51')['delegates'];
+        $api_delegates2 = $this->get('/api/delegates', [ 'offset' => '51',])['delegates'];
         return array_merge($api_delegates, $api_delegates2);
 
     }
