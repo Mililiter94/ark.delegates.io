@@ -50,10 +50,10 @@ class PollDelegates extends Command
             $oldRank = $model->rank;
 
             // Update rank & votes
-            $model->update([
-                'rank'  => $i + 1,
-                'votes' => $database->votes($delegate['public_key']),
-            ]);
+            //$model->update([
+            //    'rank'  => $i + 1,
+            //    'votes' => $database->votes($delegate['public_key']),
+            //]);
 
             // Update
             $model->extra_attributes->set('statistics.producedBlocks', $delegate['produced_blocks']);
