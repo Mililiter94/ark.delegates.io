@@ -32,7 +32,7 @@ class PollApproval extends Command
             foreach ($all_delegates as $this_delegate) {
                 
                 if($delegate['username'] == $this_delegate['username']) {
-                    $this->line('Found Approval: <info>'.$this_delegate['username'].'</info>');
+                    $this->line('Found Approval: <info>'.$this_delegate['username'].' '.$rank.'</info>');
                     $delegate->update([
                         'rank'  => $rank,
                         'votes' => $this_delegate['vote'],
