@@ -6,7 +6,6 @@ use App\Events\RankWasShifted;
 use App\Models\Delegate;
 use App\Models\User;
 use App\Services\Ark\Database;
-use App\Services\Ark\Client;
 use Illuminate\Console\Command;
 
 class PollDelegates extends Command
@@ -23,10 +22,10 @@ class PollDelegates extends Command
      *
      * @return mixed
      */
-    public function handle(Database $database, Client $client)
+    public function handle(Database $database)
     {
         $delegates = $database->delegates();
-        $all_delegates = $client->delegates();
+
         for ($i = 0; $i < \count($delegates); ++$i) {
             $delegate = $delegates[$i];
 
@@ -55,18 +54,6 @@ class PollDelegates extends Command
                 'rank'  => $i + 1,
                 'votes' => $database->votes($delegate['public_key']),
             ]);
-            for ($i2 = 0; $i2 < \count($all_delegates); ++$i2) {
-            $this_delegate = $all_delegates[$i2];
-                if($delegate['username'] == $this_delegate['username']) {
-                    $this->line('Found Approval: <info>'.$this_delegate['username'].'</info>');
-                    //$delegate->extra_attributes->set('statistics.approval', $this_delegate['approval']);
-                    //$delegate->extra_attributes->set('statistics.productivity', $this_delegate['productivity']);            
-                    $model->update([
-                        'rank'  => $i2 + 1,
-                        'votes' => $this_delegate['vote'],
-                    ]);
-                }    
-            } 
 
             // Update
             $model->extra_attributes->set('statistics.producedBlocks', $delegate['produced_blocks']);
