@@ -39,7 +39,7 @@ class PollApproval extends Command
                      ]);
                     $delegate->extra_attributes->set('statistics.approval', $this_delegate['approval']);
                     $delegate->extra_attributes->set('statistics.productivity', $this_delegate['productivity']);            
-                    continue;
+                    break;
                 }    
             } 
             $delegate->save();
