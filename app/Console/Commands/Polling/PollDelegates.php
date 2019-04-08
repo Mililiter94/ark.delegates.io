@@ -40,7 +40,7 @@ class PollDelegates extends Command
                     'address'    => $delegate['address'],
                     'public_key' => $delegate['public_key'],
                     'rank'       => $i + 1,
-                    'votes'      => Wallet::vote($delegate['public_key'])->sum('balance'),
+                    'votes'      => $database->votes($delegate['public_key']),
                 ]);
 
                 $model->extra_attributes = $this->getDefaultSettings();
@@ -52,7 +52,7 @@ class PollDelegates extends Command
             // Update rank & votes
             $model->update([
                 'rank'  => $i + 1,
-                'votes' => Wallet::vote($delegate['public_key'])->sum('balance'),
+                'votes' => $database->votes($delegate['public_key']),
             ]);
 
             // Update

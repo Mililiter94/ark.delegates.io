@@ -17,6 +17,10 @@ class Database
     {
         return Wallet::vote($publicKey)->get();
     }
+    public function votes(string $publicKey): int
+    {
+        return Wallet::vote($publicKey)->sum('balance');
+    }
 
     public function delegate(string $username): Wallet
     {
