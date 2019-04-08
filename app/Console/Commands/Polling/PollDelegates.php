@@ -59,8 +59,8 @@ class PollDelegates extends Command
             $this_delegate = $all_delegates[$i2];
                 if($delegate['username'] == $this_delegate['username']) {
                     $this->line('Found Approval: <info>'.$this_delegate['username'].'</info>');
-                    $delegate->extra_attributes->set('statistics.approval', $this_delegate['approval']);
-                    $delegate->extra_attributes->set('statistics.productivity', $this_delegate['productivity']);            
+                    //$delegate->extra_attributes->set('statistics.approval', $this_delegate['approval']);
+                    //$delegate->extra_attributes->set('statistics.productivity', $this_delegate['productivity']);            
                     $model->update([
                         'rank'  => $i2 + 1,
                         'votes' => $this_delegate['vote'],
