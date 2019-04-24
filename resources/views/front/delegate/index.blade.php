@@ -128,12 +128,12 @@
         <meta name="og:description" content="No information available" />
     @endif
 
-    <meta property="og:title" content="Ark Delegates - {{ $delegate->username }}" />
+    <meta property="og:title" content="Qredit Delegates - {{ $delegate->username }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="{{ app()->getLocale() }}" />
     {{-- <meta property="og:locale:alternate" content="en-us" /> --}}
-    <meta property="og:site_name" content="Ark Delegates - {{ $delegate->username }}" />
+    <meta property="og:site_name" content="Qredit Delegates - {{ $delegate->username }}" />
     {{-- <meta property="og:image" content="https://ark.delegates.io/cover.jpg" /> --}}
     {{-- <meta property="og:image:url" content="https://ark.delegates.io/cover.jpg" /> --}}
     {{-- <meta property="og:image:size" content="300" /> --}}

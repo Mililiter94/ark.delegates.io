@@ -1,3 +1,3 @@
 <div class="footer copyright">
-    <p>&copy; {{ date('Y') }} Ark Delegates By <a href="https://github.com/faustbrian">@faustbrian</a></p>
+    <p>&copy; {{ date('Y') }} qredit.network</p>
 </div>

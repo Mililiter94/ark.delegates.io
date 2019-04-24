@@ -75,9 +75,9 @@ module.exports = {
                 }
             }
 
-            if (delegate.settings.calculator.ignore_above_maximum_balance === 'yes') {
-                return parseInt(0).toFixed(8)
-            }
+            //if (delegate.settings.calculator.ignore_above_maximum_balance === 'yes') {
+            //    return parseInt(0).toFixed(8)
+            //}
 
             let earnings = (new BigNumber(2110 * Math.pow(10, 8)))
                 .times(delegate.share / 100)
