@@ -5,7 +5,7 @@ namespace App\Console\Commands\Polling;
 use App\Events\RankWasShifted;
 use App\Models\Delegate;
 use App\Models\User;
-use App\Services\Ark\Database;
+use App\Services\Ark\Client;
 use Illuminate\Console\Command;
 
 class PollDelegates extends Command
@@ -22,12 +22,11 @@ class PollDelegates extends Command
      *
      * @return mixed
      */
-    public function handle(Database $database)
+    public function handle(Client $client)
     {
-        $delegates = $database->delegates();
+        $delegates = $client->delegates();
 
-        for ($i = 0; $i < \count($delegates); ++$i) {
-            $delegate = $delegates[$i];
+        foreach ($delegates as $delegate) {
 
             $this->line('Polling Delegate: <info>'.$delegate['username'].'</info>');
 
@@ -38,9 +37,9 @@ class PollDelegates extends Command
                     'country_id' => 1,
                     'username'   => $delegate['username'],
                     'address'    => $delegate['address'],
-                    'public_key' => $delegate['public_key'],
-                    'rank'       => $i + 1,
-                    'votes'      => $database->votes($delegate['public_key']),
+                    'public_key' => $delegate['publicKey'],
+                    'rank'       => $delegate['rate'],
+                    'votes'      => $delegate['vote'],
                 ]);
 
                 $model->extra_attributes = $this->getDefaultSettings();
@@ -50,18 +49,17 @@ class PollDelegates extends Command
             $oldRank = $model->rank;
 
             // Update rank & votes
-            //$model->update([
-            //    'rank'  => $i + 1,
-            //    'votes' => $database->votes($delegate['public_key']),
-            //]);
+            $model->update([
+                'rank'  => $delegate['rate'],
+                'votes' => $delegate['vote'],
+            ]);
 
             // Update
-            $model->extra_attributes->set('statistics.producedBlocks', $delegate['produced_blocks']);
-            $model->extra_attributes->set('statistics.missedBlocks', $delegate['missed_blocks']);
-            // @TODO: calculate or grab from API
-            //$model->extra_attributes->set('statistics.approval', $delegate['approval']);
+            $model->extra_attributes->set('statistics.producedBlocks', $delegate['producedblocks']);
+            //$model->extra_attributes->set('statistics.missedBlocks', $delegate['missed_blocks']);
+            $model->extra_attributes->set('statistics.approval', $delegate['approval']);
             //$model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
-            $model->save();
+            //$model->save();
 
             // Ranks changed, notify subscribers
             if ($oldRank !== $model->rank) {
