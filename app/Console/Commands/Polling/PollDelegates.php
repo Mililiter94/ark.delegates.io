@@ -38,8 +38,8 @@ class PollDelegates extends Command
                     'username'   => $delegate['username'],
                     'address'    => $delegate['address'],
                     'public_key' => $delegate['publicKey'],
-                    'rank'       => $delegate['rate'],
-                    'votes'      => $delegate['vote'],
+                    'rank'       => $delegate['rank'],
+                    'votes'      => $delegate['votes'],
                 ]);
 
                 $model->extra_attributes = $this->getDefaultSettings();
@@ -50,8 +50,8 @@ class PollDelegates extends Command
 
             // Update rank & votes
             $model->update([
-                'rank'  => $delegate['rate'],
-                'votes' => $delegate['vote'],
+                'rank'  => $delegate['rank'],
+                'votes' => $delegate['votes'],
             ]);
 
             // Update
