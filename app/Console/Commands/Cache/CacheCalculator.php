@@ -26,7 +26,7 @@ class CacheCalculator extends Command
         Cache::forget('calculator');
 
         Cache::rememberForever('calculator', function () {
-            return Delegate::top60()->get()->map(function ($delegate) {
+            return Delegate::forging()->get()->map(function ($delegate) {
                 return [
                     'rank'         => $delegate->rank,
                     'username'     => $delegate->username,
