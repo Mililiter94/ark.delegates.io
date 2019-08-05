@@ -55,9 +55,9 @@ class PollDelegates extends Command
             ]);
 
             // Update
-            $model->extra_attributes->set('statistics.producedBlocks', $delegate['producedblocks']);
+            $model->extra_attributes->set('statistics.producedBlocks', $delegate['blocks']['produced']);
             //$model->extra_attributes->set('statistics.missedBlocks', $delegate['missed_blocks']);
-            $model->extra_attributes->set('statistics.approval', $delegate['approval']);
+            $model->extra_attributes->set('statistics.approval', $delegate['production']['approval']);
             //$model->extra_attributes->set('statistics.productivity', $delegate['productivity']);
             //$model->save();
 
